@@ -1,7 +1,7 @@
 version: 2
 sources:
   - name: abc_bank
-    database: portfolio_tracking
+    database: PORTFOLIO_TRACKING
     schema: source_data
     tables:
       - name: abc_bank_position
