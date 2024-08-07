@@ -16,7 +16,7 @@ with
     ),
 
     default_record as (
-        select 
+        select
             '-1' as security_code,
             'Missing' as security_name,
             'Missing' as sector_name,
@@ -28,26 +28,32 @@ with
     ),
 
     with_default_records as (
-        select * from source_data
-        union
-        select * from default_record
+        select *
+        from source_data
+        union all
+        select *
+        from default_record
     ),
 
     hashed as (
         select
-            concat_ws('|', security_code) as security_hkey,
-            concat_ws(
-                '|',
-                security_code,
-                security_name,
-                sector_name,
-                industry_name,
-                country_code,
-                exchange_code
-            ) as security_hdiff,
+            {{ dbt_utils.generate_surrogate_key(["security_code"]) }} as security_hkey,
+            {{
+                dbt_utils.generate_surrogate_key(
+                    [
+                        "security_code",
+                        "security_name",
+                        "sector_name",
+                        "industry_name",
+                        "country_code",
+                        "exchange_code",
+                    ]
+                )
+            }} as security_hdiff,
             * exclude load_ts,
             load_ts as load_ts_utc  -- renaming it in the hashed column
-        from source_data
+        from with_default_records
     )
 
-    select * from hashed
+select *
+from hashed
