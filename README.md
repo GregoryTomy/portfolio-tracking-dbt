@@ -1,7 +1,7 @@
 # Portfolio Tracking - Data Engineering with dbt and Snowflake
 
-![](lineage.png)
-![](snowflake_database.png)
+![](images/lineage.png)
+![](images/snowflake_database.png)
 
 ## Currently working on:
 - Ensure reliability by adding tests.
