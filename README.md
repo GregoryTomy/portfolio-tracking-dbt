@@ -1,4 +1,4 @@
-# Portfolio Tracking - Data Engineering with dbt
+# Portfolio Tracking - Data Engineering with dbt and Snowflake
 
 ![](lineage.png)
 
