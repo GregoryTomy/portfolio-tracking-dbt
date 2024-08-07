@@ -6,6 +6,7 @@
 ## Currently working on:
 - Macros to keep consistency by reusing code.
     - Refactored "current" CTE from snapshots into a macro.
+    - Fixed interpreted dates using macro.
 - Using dbt packages.
 
 ## TODO:
