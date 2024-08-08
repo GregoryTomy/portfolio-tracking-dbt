@@ -19,7 +19,7 @@ with
             -- number
             position_value,
             -- number
-            currency as currecy_code,
+            currency as currency_code,
             -- text
             'source_data.abc_bank_position' as record_source
         from {{ source("abc_bank", "abc_bank_position") }}
@@ -41,7 +41,7 @@ with
                         "quantity",
                         "cost_base",
                         "position_value",
-                        "currecy_code",
+                        "currency_code",
                     ]
                 )
             }} as position_hdiff,
