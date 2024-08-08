@@ -1,1 +1,1 @@
-select * from {{ref("REF_ABC_BANK_SECURITY_INFO")}}
+select * from {{ref("REF_SECURITY_INFO_ABC_BANK")}}
