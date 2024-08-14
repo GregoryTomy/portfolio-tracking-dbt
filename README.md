@@ -5,6 +5,7 @@
 
 ## Currently working on:
 - Ensure reliability by adding tests.
+- Configuring tests.
 
 ## Recently worked on:
 - Macros to keep consistency by reusing code.

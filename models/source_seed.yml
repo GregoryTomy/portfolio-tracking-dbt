@@ -4,3 +4,13 @@ sources:
     schema: "{{target.schema}}_SEED_DATA"
     tables:
       - name: ABC_Bank_SECURITY_INFO
+        columns:
+          - name: SECURITY_CODE
+            tests:
+              - not_null
+              - unique
+          - name: SECURITY_NAME
+            tests:
+              - not_null
+              - dbt_utils.not_empty_string
+                  
